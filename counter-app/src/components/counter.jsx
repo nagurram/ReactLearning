@@ -2,6 +2,17 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = { value: this.props.counter.value };
+  componentDidUpdate(prevProps, prevState) {
+    //console.log("prevProps", prevProps);
+    //console.log("prevState", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      //console.log("value not changed");
+    }
+  }
+
+  componentWillUnmount() {
+    console.log("component un mount");
+  }
 
   render() {
     // console.log(this.props);
